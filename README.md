@@ -43,8 +43,7 @@ bower install
 ```
 
 ### Initialize Dev Environment
-- Using start.sh.example, create start.sh and fill in with your own details.
-- Run ``chmod +x start.sh`` to make the script executable.
+- Copy start.sh.example to start.sh and edit the environment variables to match your local machine.
 - Run ``npm start`` to launch server
 
 ## Contributing
