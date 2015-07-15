@@ -1,4 +1,5 @@
-.nav {
-  float: left;
-  padding: 5px;
+.navLarge {
+  font-size: 3em;
+  padding-left: 15px;
+  padding-right: 15px;
 }

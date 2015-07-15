@@ -5,27 +5,19 @@ var path = require('path');
 
 module.exports = function(app, express) {
   //routes
-  var userRouter = express.Router();
-  var apiRouter = express.Router();
+  var tweetRouter = express.Router();
 
   app.use(morgan('dev'));
   app.use(bodyParser.urlencoded({
     extended: true
   }));
   app.use(bodyParser.json());
-  app.use(express.static(__dirname + '/../../client'));
 
-  app.use('/users', userRouter); 
-  app.use('/api', apiRouter);
- 
-  app.all('/*', function(req, res, next) {
-      res.sendFile(path.resolve('client/index.html'));
-  });
+  app.use('/tweets', tweetRouter); 
   
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
 
   // inject our routers into their respective route files
-  require('../users/userRoutes.js')(userRouter);
-  require('../api/apiRoutes.js')(apiRouter);
+  require('../tweets/tweetRoutes.js')(tweetRouter);
 };

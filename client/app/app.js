@@ -1,4 +1,5 @@
-var essoteegeeApp = angular.module('essoteegeeApp', ['ui.router']);
+var essoteegeeApp = angular.module('essoteegeeApp', ['ui.router', 'sotgFactory',
+'loginCtrl', 'signupCtrl']);
 essoteegeeApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider){
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true);

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
     jshint: {
       // This is the list of files on which grunt will run JSHint
-      all: ['Gruntfile.js', 'package.json', 'server/**/*.js', 'index.js'],
+      all: ['Gruntfile.js', 'package.json', 'server/**/*.js', 'streaming/**/*.js', 'tweetHandler/**/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 
     watch: {
       // These are the files that grunt will watch for changes.
-      files: ['Gruntfile.js', 'package.json', 'tests/**/*.js', 'server/**/*.js', 'index.js'],
+      files: ['Gruntfile.js', 'package.json', 'tests/**/*.js', 'server/**/*.js', 'streaming/**/*.js', 'tweetHandler/**/*.js'],
       // These are the tasks that are run on each of the above files every time there is a change.
       tasks: ['jshint', 'mochaTest'],
       options: {
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
     jsdoc : {
         dist : {
-            src: ['server/**/*.js', 'tests/**/*.js'], 
+            src: ['server/**/*.js', 'streaming/**/*.js', 'tweetHandler/**/*.js', 'tests/**/*.js'], 
             options: {
                 destination: 'docs'
             }
@@ -43,7 +43,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsdoc');
 
   grunt.registerTask('default', ['jshint', 'mochaTest', 'jsdoc']);
-
   grunt.registerTask('test', 'mochaTest');
-
 };

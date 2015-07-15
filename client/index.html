@@ -5,14 +5,26 @@
     <base href="/index.html">
   </head>
   <body ng-app="essoteegeeApp">
+  <header>
+  <div class="navbar">
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active navLarge" ui-sref="/">Home</li>
+        <li role="presentation" class="navLarge" ui-sref="signup">Sign up</li>
+        <li role="presentation" class="navLarge" ui-sref="login">Log in</li>
+        <li role="presentation" class="navLarge">Documentation</li>
+      </ul>
+    </div>
+    </div>
+  </header>    
+    <div ui-view></div>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">      
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="app/app.js"></script>
-    <h2 ui-sref="/">Home</h2>
-    <h2 ui-sref="signup">Sign up</h2>
-    <h2 ui-sref="login">Log in</h2>
-    <h2>Documentation</h2>    
-    <div ui-view></div>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/factories/factory.js"></script> 
   </body>
 </html>
