@@ -54,6 +54,11 @@ var searchDbForTweets = module.exports.searchDbForTweets = function(keyword, cb)
         tweets.push(tweet);
       });
       cb(tweets);
+    })
+    .catch(function(err) {
+      err = err || "Could not fetch tweets from db.";
+      console.log(err);
+      res.send(err);
     });
 };
 
