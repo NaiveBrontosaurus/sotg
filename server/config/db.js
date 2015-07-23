@@ -11,6 +11,7 @@ var hostname = process.env.RDS_HOSTNAME || process.env.MYSQL_DATABASE_SERVER || 
 var username = process.env.RDS_USERNAME || process.env.MYSQL_DATABASE_USER || config.db.user;
 var password = process.env.RDS_PASSWORD || process.env.MYSQL_DATABASE_PASSWORD || config.db.password;
 var database = process.env.RDS_DB_NAME || process.env.MYSQL_DATABASE || config.db.database;
+console.log(hostname);
 var port = process.env.RDS_PORT || '3306';
 
 var knex = require('knex')({
@@ -19,7 +20,7 @@ var knex = require('knex')({
   // Here we first check to see if we are on AWS,
   // then we check to see if we are on Docker (MYSQL_DATABASE_...)
   // then we just use the file on our local machine
-  connection: process.env.CLEARDB_DATABASE_URL || {
+  connection: {
     host: hostname,
     user: username,
     password: password,
